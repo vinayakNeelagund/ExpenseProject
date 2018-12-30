@@ -29,7 +29,7 @@ public class HomeController {
 		
 		return"index";
 	}
-
+	
 	@RequestMapping(method=RequestMethod.GET,value="/getexpense/{id}")
 	public ModelAndView updateTopic(@PathVariable String id) {
 		 ModelAndView map = new ModelAndView("home");

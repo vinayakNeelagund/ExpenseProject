@@ -113,6 +113,13 @@ public class ExpenseDetail {
 	}
 
 
+	@Override
+	public String toString() {
+		return "ExpenseDetail [expid=" + expid + ", creatDate=" + creatDate + ", amount=" + amount + ", currency="
+				+ currency + ", title=" + title + ", descpp=" + descpp + ", clientname=" + clientname + "]";
+	}
+
+
 	
 	
 }

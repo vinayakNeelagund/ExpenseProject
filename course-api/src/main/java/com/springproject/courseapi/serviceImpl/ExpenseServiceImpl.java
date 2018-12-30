@@ -12,11 +12,12 @@ import com.springproject.courseapi.DTO.ExpenseDetail;
 import com.springproject.courseapi.DTO.Topic;
 import com.springproject.courseapi.Repository.ExpenseRepository;
 import com.springproject.courseapi.serviceInterface.ExpenseServiceInterface;
+
 @Service
-public class ExpenseServiceImpl implements ExpenseServiceInterface{
+public class ExpenseServiceImpl implements ExpenseServiceInterface {
 	@Autowired
 	private ExpenseRepository expenserep;
-	
+
 	@Override
 	public ExpenseDetail addExpense(ExpenseDetail expense) {
 		return expenserep.save(expense);
@@ -24,16 +25,17 @@ public class ExpenseServiceImpl implements ExpenseServiceInterface{
 
 	@Override
 	public Set<String> getexpenselist() {
-		
-		Set<String> exps=new HashSet<>();
+
+		Set<String> exps = new HashSet<>();
+		System.out.println(expenserep.findDistinctClientname());
 		expenserep.findDistinctClientname().forEach(exps::add);
-		exps.forEach((data)-> {System.out.println(data);});
-		return exps;
+		// exps.forEach((data)-> {System.out.println(data);});
+		return expenserep.findDistinctClientname();
 	}
 
 	@Override
-	public List<ExpenseDetail> getexpensebyemaillist( String id) {
-		List<ExpenseDetail> exps1=new ArrayList<>();
+	public List<ExpenseDetail> getexpensebyemaillist(String id) {
+		List<ExpenseDetail> exps1 = new ArrayList<>();
 		expenserep.findByClientname(id).forEach(exps1::add);
 		return exps1;
 	}

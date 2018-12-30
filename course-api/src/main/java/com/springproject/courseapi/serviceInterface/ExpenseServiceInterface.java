@@ -16,8 +16,6 @@ public interface ExpenseServiceInterface {
 
 	public Set<String> getexpenselist();
 
-	
-
 	public List<ExpenseDetail> getexpensebyemaillist( String id);
 
 }
