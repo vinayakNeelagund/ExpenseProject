@@ -1,6 +1,6 @@
 package com.springproject.courseapi.Controller;
 
-import java.util.List;
+
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springproject.courseapi.DTO.ExpenseDetail;
-import com.springproject.courseapi.DTO.Topic;
+
 import com.springproject.courseapi.serviceInterface.ExpenseServiceInterface;
 
 import ch.qos.logback.classic.AsyncAppender;
