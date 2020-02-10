@@ -1,6 +1,6 @@
 node{
 stage('SCM Checkout'){
-git 'https://github.com/vinayakNeelagund/ExpenseProject/course-api/'
+git 'https://github.com/vinayakNeelagund/ExpenseProject'
 }
 stage('Compile-Package'){
 sh 'mvn package'
