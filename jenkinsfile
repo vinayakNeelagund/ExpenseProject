@@ -1,8 +1,33 @@
-node{
-stage('SCM Checkout'){
-git 'https://github.com/vinayakNeelagund/ExpenseProject.git'
-}
-stage('Compile-Package'){
-sh 'mvn package'
-}
+pipeline {
+    agent any
+    tools {
+            maven 'Maven_3.5.2'
+        }
+    stages {
+        stage('Source') { // Get code
+          steps {
+            // get code from our Git repository
+            git 'https://github.com/girish513/ActuatorExample'
+            echo 'Get Code from GIT Repo'
+          }
+        }
+        stage ('Compile Stage') {
+            steps {
+                    sh 'mvn clean compile'
+                    echo 'Compile Code'
+             }
+         }
+        stage ('Testing Stage') {
+            steps {
+                    sh 'mvn test'
+                     echo 'Testing Code'
+            }
+        }
+        stage ('Install Stage') {
+             steps {
+                    sh 'mvn install'
+                     echo 'Install Code'
+            }
+        }
+    }
 }
