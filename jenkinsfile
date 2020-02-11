@@ -7,7 +7,7 @@ pipeline {
         stage('Source') { // Get code
           steps {
             // get code from our Git repository
-            git 'https://github.com/girish513/ActuatorExample'
+            git 'https://github.com/vinayakNeelagund/ExpenseProject.git'
             echo 'Get Code from GIT Repo'
           }
         }
