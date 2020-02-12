@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('Compile Stage') {
             steps {
-                    sh 'mvn -f ExpenseProject/course-api/pom.xml'
+                    sh 'mvn -f course-api/pom.xml'
                     sh 'mvn clean compile'
                     echo 'Compile Code'
              }
